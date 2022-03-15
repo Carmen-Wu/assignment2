@@ -21,3 +21,17 @@ Array.prototype.myMap = function (callbackFn) {
     }
     return newArray;
 }
+
+// SOME // 
+Array.prototype.mySome = function(callbackFn) {
+    const bool = new Boolean(false);
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === undefined) {
+        //if (callbackFn(this[i]) === true) {bool = true;}
+        continue;}
+      const result = callbackFn(this[i], i, this);
+      if (result) {return result;}
+      
+    }
+    return bool;
+  };
