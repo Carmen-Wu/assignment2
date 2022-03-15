@@ -50,3 +50,30 @@ Array.prototype.mySome = function(callbackFn) {
     }
     return initialValue;
   }
+
+  // INCLUDES //
+  Array.prototype.myIncludes = function(searchElement,fromIndex) {
+    if(fromIndex > this.length){
+      return false;
+    }
+    if(fromIndex< 0){
+      fromIndex = this.length + fromIndex;
+    }
+    if (fromIndex != undefined){
+      return (this[fromIndex] === searchElement);
+    }
+    
+    for (let i = 0; i < this.length; i++) {
+      if(Number.isNaN(searchElement)){
+        if(Number.isNaN(this[i])){
+        return true;
+        }
+      }
+      else{
+        if(this[i] === searchElement){
+        return true;
+        }
+      }
+    }
+    return false;
+  };
