@@ -35,3 +35,18 @@ Array.prototype.mySome = function(callbackFn) {
     }
     return bool;
   };
+
+  // REDUCE // 
+  Array.prototype.myReduce = function(callbackFn, initialValue) {
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === undefined) {
+        continue;}
+      if(initialValue === undefined){
+        initialValue = this[i];
+        continue;
+      }
+      const result = callbackFn(initialValue,this[i], i, this, initialValue );
+      initialValue = result;
+    }
+    return initialValue;
+  }
