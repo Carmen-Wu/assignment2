@@ -2,5 +2,5 @@
 
 Group member:
 
--Carmen Wu: Carmen-Wu
--Dian Chen: orzdian
+- Carmen Wu: Carmen-Wu
+- Dian Chen: orzdian
