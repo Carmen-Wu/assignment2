@@ -86,7 +86,7 @@ Array.prototype.mySome = function(callbackFn) {
     if(fromIndex< 0){
       fromIndex = this.length + fromIndex;
     } 
-    for (let i = fromIndex; i < this.length; i++) { //sorting through element from starting element
+    for (let i = fromIndex; i < this.length; i++) { //scanning through element from starting element
       if(this[i] === searchElement){ // if element matched 
       return i;// return position of index
       }
