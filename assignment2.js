@@ -94,6 +94,7 @@ Array.prototype.mySome = function(callbackFn) {
     return -1;// not found
   };
   
+//myPush//
   Array.prototype.myPush = function(...args) {  // Use rest parameter to accept any number of input arguments
     let args_index = 0;  // Index of new element
     let length = this.length;   // Length of "this" array
@@ -103,4 +104,20 @@ Array.prototype.mySome = function(callbackFn) {
         args_index++;
     }
     return this.length;  // Return new length of "this" array
+};
+
+//myLastIndexOf//
+Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
+  if(fromIndex=== undefined){
+    fromIndex = this.length; //inintilze fromIndex from the lenth of array
+  }
+  if(fromIndex< 0){
+    fromIndex = this.length + fromIndex;
+  } 
+  for (let i = fromIndex; i >= 0; i--) { //scan from the last index to the first index
+    if(this[i] === searchElement){// if matched
+    return i; // return position of index
+    }
+  }
+  return -1;// not found
 };
