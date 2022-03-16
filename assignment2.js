@@ -81,7 +81,7 @@ Array.prototype.mySome = function(callbackFn) {
   // myIndex//
   Array.prototype.myIndexOf = function(searchElement, fromIndex) {
     if(fromIndex=== undefined){
-      fromIndex = 0; //inintilze fromIndex if it is not given to 0
+      fromIndex = 0; //initialze fromIndex if it is not given to 0
     }
     if(fromIndex< 0){
       fromIndex = this.length + fromIndex;
@@ -109,7 +109,7 @@ Array.prototype.mySome = function(callbackFn) {
 //myLastIndexOf//
 Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
   if(fromIndex=== undefined){
-    fromIndex = this.length; //inintilze fromIndex from the lenth of array
+    fromIndex = this.length; //initialze fromIndex from the lenth of array
   }
   if(fromIndex< 0){
     fromIndex = this.length + fromIndex;
@@ -121,3 +121,14 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
   }
   return -1;// not found
 };
+
+//myKeys
+Object.myKeys = function(obj) {
+  let obj_name = [obj.size]; 
+  let i = 0; // initialize index to 0
+  for (var name in obj){ // loop all enumerable property name
+    obj_name[i] =name; // input enumerable property name into this index
+    i++; // increment index
+  }
+  return obj_name; //return enumerable property names
+}
