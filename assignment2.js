@@ -13,7 +13,7 @@ Array.prototype.myEach = function (callbackFn) {
 // MAP //
 Array.prototype.myMap = function (callbackFn) {
     const newArray = [this.length];
-    for (let i = 0; i < this.length; i++) {
+    for (let i = 0; i < this.length; i++) { 
       if (this[i] === undefined) {
         continue;}
       const result = callbackFn(this[i], i, this);
