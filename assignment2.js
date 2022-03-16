@@ -77,3 +77,32 @@ Array.prototype.mySome = function(callbackFn) {
     }
     return false;
   };
+
+  // myIndex//
+  Array.prototype.myIndexOf = function(searchElement, fromIndex) {
+    if(fromIndex=== undefined){
+      fromIndex = 0; //inintilze fromIndex if it is not given to 0
+    }
+    if(fromIndex< 0){
+      fromIndex = this.length + fromIndex;
+    }
+    for (let i = fromIndex; i < this.length; i++) {
+      if(this[i] === searchElement){
+      return i;
+      }
+    }
+    return -1;
+  };
+  
+  // TEST //
+  const array = [2, 7, 9, 8];
+  console.log(array.myIndexOf(2));     // 0
+  console.log(array.myIndexOf(9));     // -1
+  console.log(array.myIndexOf(7, 2));  // 2
+  console.log(array.myIndexOf(8, 5)); // -1
+  console.log(array.myIndexOf(2, -3)); // 0
+  console.log(array.indexOf(2));     // 0
+  console.log(array.indexOf(9));     // -1
+  console.log(array.indexOf(3, 1));  // 2
+  console.log(array.indexOf(2, -1)); // -1
+  console.log(array.indexOf(2, -3)); // 0
