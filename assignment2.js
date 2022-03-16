@@ -122,7 +122,7 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
   return -1;// not found
 };
 
-//myKeys
+//myKeys//
 Object.myKeys = function(obj) {
   let obj_name = [obj.size]; 
   let i = 0; // initialize index to 0
@@ -132,3 +132,14 @@ Object.myKeys = function(obj) {
   }
   return obj_name; //return enumerable property names
 }
+
+//myValues//
+Object.myValues = function(obj) {
+  let obj_value = [obj.size];
+  let i = 0; // initialize index to 0
+  for (var name in obj){ // loop all enumerable property name
+    obj_value[i] = obj[name]; // input enumerable property value into this index
+    i++; // increment index
+  }
+  return obj_value;
+};
