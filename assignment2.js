@@ -12,24 +12,24 @@ Array.prototype.myEach = function (callbackFn) {
 
 // MAP //
 Array.prototype.myMap = function (callbackFn) {
-    const newArray = [this.length];
-    for (let i = 0; i < this.length; i++) {
+    const newArray = [this.length]; //initialized new array 
+    for (let i = 0; i < this.length; i++) { // loop through every index of array
       if (this[i] === undefined) {
         continue;}
-      const result = callbackFn(this[i], i, this);
+      const result = callbackFn(this[i], i, this); // 3 parameters 
       newArray[i]=result;
     }
-    return newArray;
+    return newArray; //return newArray 
 }
 
 // SOME // 
 Array.prototype.mySome = function(callbackFn) {
-    const bool = new Boolean(false);
-    for (let i = 0; i < this.length; i++) {
-      if (this[i] === undefined) {
+    const bool = new Boolean(false); 
+    for (let i = 0; i < this.length; i++) { //loop through every index of array
+      if (this[i] === undefined) { //if index is empty, continue to next index
         //if (callbackFn(this[i]) === true) {bool = true;}
         continue;}
-      const result = callbackFn(this[i], i, this);
+      const result = callbackFn(this[i], i, this); //3 parameters
       if (result) {return result;}
       
     }
@@ -38,11 +38,11 @@ Array.prototype.mySome = function(callbackFn) {
 
   // REDUCE // 
   Array.prototype.myReduce = function(callbackFn, initialValue) {
-    for (let i = 0; i < this.length; i++) {
-      if (this[i] === undefined) {
+    for (let i = 0; i < this.length; i++) { // loop through every index of array
+      if (this[i] === undefined) { //if index is empty, continue to next index
         continue;}
-      if(initialValue === undefined){
-        initialValue = this[i];
+      if(initialValue === undefined){ 
+        initialValue = this[i]; //set initialValue as array index
         continue;
       }
       const result = callbackFn(initialValue,this[i], i, this, initialValue );
@@ -53,7 +53,7 @@ Array.prototype.mySome = function(callbackFn) {
 
   // INCLUDES //
   Array.prototype.myIncludes = function(searchElement,fromIndex) {
-    if(fromIndex > this.length){
+    if(fromIndex > this.length){ //start index cannot be greater than length of array
       return false;
     }
     if(fromIndex< 0){
@@ -63,14 +63,14 @@ Array.prototype.mySome = function(callbackFn) {
       return (this[fromIndex] === searchElement);
     }
     
-    for (let i = 0; i < this.length; i++) {
+    for (let i = 0; i < this.length; i++) { // loop through every index of array
       if(Number.isNaN(searchElement)){
         if(Number.isNaN(this[i])){
         return true;
         }
       }
       else{
-        if(this[i] === searchElement){
+        if(this[i] === searchElement){ // if elememet found, return true
         return true;
         }
       }
