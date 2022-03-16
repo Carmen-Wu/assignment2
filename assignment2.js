@@ -85,24 +85,12 @@ Array.prototype.mySome = function(callbackFn) {
     }
     if(fromIndex< 0){
       fromIndex = this.length + fromIndex;
-    }
-    for (let i = fromIndex; i < this.length; i++) {
-      if(this[i] === searchElement){
-      return i;
+    } 
+    for (let i = fromIndex; i < this.length; i++) { //sorting through element from starting element
+      if(this[i] === searchElement){ // if element matched 
+      return i;// return position of index
       }
     }
-    return -1;
+    return -1;// not found
   };
   
-  // TEST //
-  const array = [2, 7, 9, 8];
-  console.log(array.myIndexOf(2));     // 0
-  console.log(array.myIndexOf(9));     // -1
-  console.log(array.myIndexOf(7, 2));  // 2
-  console.log(array.myIndexOf(8, 5)); // -1
-  console.log(array.myIndexOf(2, -3)); // 0
-  console.log(array.indexOf(2));     // 0
-  console.log(array.indexOf(9));     // -1
-  console.log(array.indexOf(3, 1));  // 2
-  console.log(array.indexOf(2, -1)); // -1
-  console.log(array.indexOf(2, -3)); // 0
