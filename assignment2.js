@@ -141,5 +141,5 @@ Object.myValues = function(obj) {
     obj_value[i] = obj[name]; // input enumerable property value into this index
     i++; // increment index
   }
-  return obj_value;
+  return obj_value;//return enumerable property value
 };
