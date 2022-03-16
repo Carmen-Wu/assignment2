@@ -77,3 +77,20 @@ Array.prototype.mySome = function(callbackFn) {
     }
     return false;
   };
+
+  // myIndex//
+  Array.prototype.myIndexOf = function(searchElement, fromIndex) {
+    if(fromIndex=== undefined){
+      fromIndex = 0; //inintilze fromIndex if it is not given to 0
+    }
+    if(fromIndex< 0){
+      fromIndex = this.length + fromIndex;
+    } 
+    for (let i = fromIndex; i < this.length; i++) { //scanning through element from starting element
+      if(this[i] === searchElement){ // if element matched 
+      return i;// return position of index
+      }
+    }
+    return -1;// not found
+  };
+  
